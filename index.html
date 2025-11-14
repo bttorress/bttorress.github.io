@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferta Única - Sandálias JRJL com 50% OFF</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset e configurações básicas */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Seção de conteúdo */
+        .content {
+            flex: 1;
+            min-width: 300px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .discount-badge {
+            background: #e74c3c;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .warning i {
+            color: #856404;
+            margin-right: 10px;
+        }
+        
+        .features {
+            margin: 20px 0;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .feature i {
+            color: #3498db;
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .specs {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .specs h3 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 5px;
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        
+        .spec-item {
+            margin-bottom: 8px;
+        }
+        
+        .spec-item span {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        /* Seção de imagem */
+        .image-section {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #ecf0f1 0%, #dfe6e9 100%);
+        }
+        
+        .product-image {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        
+        .price-container {
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .old-price {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            text-decoration: line-through;
+        }
+        
+        .new-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #e74c3c;
+        }
+        
+        /* Botões em divs separadas */
+        .button-container {
+            width: 100%;
+            margin: 10px 0;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        .btn-accept {
+            background: linear-gradient(to right, #2ecc71, #1abc9c);
+            color: white;
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+        }
+        
+        .btn-accept:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(46, 204, 113, 0.6);
+        }
+        
+        .btn-reject {
+            background: rgba(255, 255, 255, 0.9);
+            color: #666;
+            border: 2px solid #e0e0e0;
+        }
+        
+        .btn-reject:hover {
+            background: rgba(240, 240, 240, 0.9);
+            border-color: #d0d0d0;
+        }
+        
+        /* Contador de oferta */
+        .offer-timer {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+            border: 2px dashed #e74c3c;
+        }
+        
+        .timer-text {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .timer {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #e74c3c;
+        }
+        
+        .final-warning {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #e74c3c;
+            font-weight: 600;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 1.7rem;
+            }
+            
+            .content, .image-section {
+                padding: 20px;
+            }
+            
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="header">
+                <div class="discount-badge">50% DE DESCONTO</div>
+                <h1>ÚLTIMA CHANCE!</h1>
+                <p class="subtitle">Sandálias JRJL - Conforto e Estilo por um Preço Incrível</p>
+            </div>
+            
+            <div class="warning">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>ATENÇÃO:</strong> Esta é sua última oportunidade! Se você recusar esta oferta, ela desaparecerá para sempre e você não terá outra chance.
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-check-circle"></i> 
+                    <span><strong>Antiderrapante:</strong> Solado com excelente tração para praias e superfícies escorregadias</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-check-circle"></i> 
+                    <span><strong>Leve:</strong> Design leve para uso prolongado sem desconforto</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-check-circle"></i> 
+                    <span><strong>Design Fashion:</strong> Design moderno que adiciona estilo ao seu visual</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-check-circle"></i> 
+                    <span><strong>Material EVA:</strong> Material durável e resistente para uso diário</span>
+                </div>
+            </div>
+            
+            <div class="specs">
+                <h3>Especificações Técnicas:</h3>
+                <div class="specs-grid">
+                    <div class="spec-item"><span>Marca:</span> JRJL</div>
+                    <div class="spec-item"><span>Material:</span> EVA</div>
+                    <div class="spec-item"><span>Origem:</span> China Continental</div>
+                    <div class="spec-item"><span>Gênero:</span> Unissex</div>
+                    <div class="spec-item"><span>Impermeável:</span> Sim</div>
+                    <div class="spec-item"><span>Peso:</span> 165g</div>
+                    <div class="spec-item"><span>Tamanhos:</span> 36-45</div>
+                    <div class="spec-item"><span>Temporada:</span> Todas</div>
+                </div>
+            </div>
+            
+            <div class="offer-timer">
+                <div class="timer-text">Esta oferta expira em:</div>
+                <div class="timer" id="timer">05:00</div>
+                <div class="final-warning">Você não verá esta oferta novamente!</div>
+            </div>
+        </div>
+        
+        <div class="image-section">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Sandálias JRJL" class="product-image">
+            
+            <div class="price-container">
+                <div class="old-price">De: R$ 99,90</div>
+                <div class="new-price">Por: R$ 49,90</div>
+            </div>
+            
+            <div class="button-container">
+                <a href="https://seusite.com/aceitar-downsell" class="btn btn-accept" id="acceptBtn">
+                    <i class="fas fa-check"></i> SIM, EU QUERO ESTA OFERTA!
+                </a>
+            </div>
+            
+            <div class="button-container">
+                <a href="https://seusite.com/recusar-downsell" class="btn btn-reject" id="rejectBtn">
+                    <i class="fas fa-times"></i> NÃO, RECUSAR ESTA OFERTA
+                </a>
+            </div>
+            
+            <div class="warning" style="margin-top: 20px;">
+                <i class="fas fa-info-circle"></i>
+                <strong>Nota:</strong> Os tamanhos seguem padrão asiático. Recomendamos escolher 1-2 números acima do seu tamanho normal.
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Contador regressivo
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            const interval = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+                
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                
+                display.textContent = minutes + ":" + seconds;
+                
+                if (--timer < 0) {
+                    clearInterval(interval);
+                    display.textContent = "OFERTA EXPIRADA!";
+                    document.getElementById('acceptBtn').style.opacity = "0.5";
+                    document.getElementById('acceptBtn').style.pointerEvents = "none";
+                    document.getElementById('rejectBtn').style.opacity = "0.5";
+                    document.getElementById('rejectBtn').style.pointerEvents = "none";
+                    
+                    // Mensagem final
+                    const finalWarning = document.querySelector('.final-warning');
+                    finalWarning.textContent = "OFERTA INDISPONÍVEL - Você perdeu esta oportunidade única!";
+                    finalWarning.style.color = "#e74c3c";
+                    finalWarning.style.fontSize = "1.1rem";
+                }
+            }, 1000);
+        }
+        
+        window.onload = function () {
+            const fiveMinutes = 60 * 5; // 5 minutos em segundos
+            const display = document.querySelector('#timer');
+            startTimer(fiveMinutes, display);
+        };
+        
+        // Interação com os botões
+        document.getElementById('acceptBtn').addEventListener('click', function(e) {
+            // Comportamento personalizado antes do redirecionamento (opcional)
+            // e.preventDefault();
+        });
+        
+        document.getElementById('rejectBtn').addEventListener('click', function(e) {
+            // Animação de recusa
+            this.style.transform = 'translateX(10px)';
+            setTimeout(() => {
+                this.style.transform = 'translateX(0)';
+            }, 300);
+        });
+    </script>
+</body>
+</html>
